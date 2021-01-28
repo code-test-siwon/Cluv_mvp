@@ -6,21 +6,27 @@ const globalStyles = createGlobalStyle`
 
     :root {
     /* White Color */
-    --color-1: #00af91;
-    --color-2: #585858;
+    --color-1: white;
+    --color-2: #298042;
     --color-3: #f58634;
-    --color-4: white;
-    --color-5: black;
+    --color-4: black;
+    --color-5: white;
     --color-6: #ffcc29;
 
     --color-bg : white;
 
     /* Font size */
+    --font-1 : 1.5rem;
+    --font-2 : 1.3rem;
+    --font-3 : 1.1rem;
+    --font-4 : 0.8rem;
+    --font-5 : 0.5rem;
     --font-large: 48px;
     --font-medium: 28px;
     --font-regular: 18px;
     --font-small: 16px;
     --font-micro: 14px;
+
 
     /* Font weight */
     --weight-bold: 700;
@@ -69,7 +75,7 @@ const globalStyles = createGlobalStyle`
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size:12px;
         color:white;
-        padding-top:50px;
+        
     }
 `;
 

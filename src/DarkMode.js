@@ -17,6 +17,11 @@ const globalStyles2 = createGlobalStyle`
     
     --color-bg : #292929;
     /* Font size */
+    --font-1 : 1.5rem;
+    --font-2 : 1.3rem;
+    --font-3 : 1.1rem;
+    --font-4 : 0.8rem;
+    --font-5 : 0.5rem;
     --font-large: 48px;
     --font-medium: 28px;
     --font-regular: 18px;
@@ -71,7 +76,7 @@ const globalStyles2 = createGlobalStyle`
         font-size:12px;
         background: #494949;
         color:white;
-        padding-top:50px;
+        
     }
 `;
 

@@ -28,7 +28,7 @@ const WidthLine = styled.div`
   flex-direction: column;
   align-items: center;
   margin: auto;
-  border: 1px solid var(--color-3);
+  border: 1px solid var(--color-1);
   background: var(--color-bg);
 `;
 
