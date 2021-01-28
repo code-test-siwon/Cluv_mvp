@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from "react";
 import AppRouter from "components/AppRouter";
-
 import styled from "styled-components";
+import { authService } from "fbase";
+
 import WhiteMode from "WhiteMode";
 import DarkMode from "DarkMode";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [mode, setMode] = useState(false);
+  const [init, setInit] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(authService.currentUser);
+  const [mode, setMode] = useState(true);
+  useEffect(() => {
+    authService.onAuthStateChanged((user) => {
+      if (user) {
+        setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
+      }
+      setInit(true);
+    });
+  });
 
   const modeChange = () => setMode((prev) => !prev);
   return (
@@ -15,7 +27,11 @@ const App = () => {
       {mode ? <DarkMode /> : <WhiteMode />}
       <WidthLine>
         <button onClick={modeChange}>ModeChange</button>
-        <AppRouter isLoggedIn={isLoggedIn} />
+        {init ? (
+          <AppRouter isLoggedIn={isLoggedIn}></AppRouter>
+        ) : (
+          "initializing..."
+        )}
       </WidthLine>
     </>
   );
