@@ -6,15 +6,15 @@ import WhiteMode from "WhiteMode";
 import DarkMode from "DarkMode";
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [mode, setMode] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [mode, setMode] = useState(false);
 
-  const modeChange = () => {};
-
+  const modeChange = () => setMode((prev) => !prev);
   return (
     <>
       {mode ? <DarkMode /> : <WhiteMode />}
       <WidthLine>
+        <button onClick={modeChange}>ModeChange</button>
         <AppRouter isLoggedIn={isLoggedIn} />
       </WidthLine>
     </>
@@ -22,14 +22,14 @@ const App = () => {
 };
 
 const WidthLine = styled.div`
-  max-width: 375px;
+  max-width: 370px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
   margin: auto;
-  border: 1px solid var(--color-d3);
+  border: 1px solid var(--color-3);
+  background: var(--color-bg);
 `;
 
 export default App;

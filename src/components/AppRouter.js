@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "routes/Home";
 import Auth from "routes/Auth";
-import PropTypes from "prop-types";
 
 const AppRouter = ({ isLoggedIn }) => {
   return (

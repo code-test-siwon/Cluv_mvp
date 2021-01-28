@@ -6,12 +6,14 @@ const globalStyles = createGlobalStyle`
 
     :root {
     /* White Color */
-    --color-w1: #00af91;
-    --color-w2: #585858;
-    --color-w3: #f58634;
-    --color-w4: white;
-    --color-w5: black;
-    --color-w6: #ffcc29;    
+    --color-1: #00af91;
+    --color-2: #585858;
+    --color-3: #f58634;
+    --color-4: white;
+    --color-5: black;
+    --color-6: #ffcc29;
+
+    --color-bg : white;
 
     /* Font size */
     --font-large: 48px;
@@ -31,28 +33,28 @@ const globalStyles = createGlobalStyle`
     h1 {
     font-size: var(--font-large);
     font-weight: var(--weight-bold);
-    color: var(--color-black);
+    color: var(--color-5);
     margin: 16px 0px;
     }
 
     h2 {
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
-    color: var(--color-black);
+    color: var(--color-5);
     margin: 8px 0;
     }
 
     h3 {
     font-size: var(--font-regular);
     font-weight: var(--weight-regular);
-    color: var(--color-black);
+    color: var(--color-5);
     margin: 8px 0;
     }
 
     p {
     font-size: var(--font-regular);
     font-weight: var(--weight-regular);
-    color: var(--color-black);
+    color: var(--color-5);
     margin: 4px 0;
     }
 
@@ -66,7 +68,6 @@ const globalStyles = createGlobalStyle`
     body{
         font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size:12px;
-        
         color:white;
         padding-top:50px;
     }

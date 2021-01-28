@@ -8,14 +8,14 @@ const globalStyles2 = createGlobalStyle`
 
     :root {
     /* dark Color */
-    --color-d1: #292929;
-    --color-d2: #585858;
-    --color-d3: #FFc815;
-    --color-d4: white;
-    --color-d5: black;
-    --color-d6 : #dbdbdb;
+    --color-1: #292929;
+    --color-2: #585858;
+    --color-3: #FFc815;
+    --color-4: white;
+    --color-5: black;
+    --color-6 : #dbdbdb;
     
-
+    --color-bg : #292929;
     /* Font size */
     --font-large: 48px;
     --font-medium: 28px;
@@ -34,28 +34,28 @@ const globalStyles2 = createGlobalStyle`
     h1 {
     font-size: var(--font-large);
     font-weight: var(--weight-bold);
-    color: var(--color-black);
+    color: var(--color-4);
     margin: 16px 0px;
     }
 
     h2 {
     font-size: var(--font-medium);
     font-weight: var(--weight-semi-bold);
-    color: var(--color-black);
+    color: var(--color-4);
     margin: 8px 0;
     }
 
     h3 {
     font-size: var(--font-regular);
     font-weight: var(--weight-regular);
-    color: var(--color-black);
+    color: var(--color-4);
     margin: 8px 0;
     }
 
     p {
     font-size: var(--font-regular);
     font-weight: var(--weight-regular);
-    color: var(--color-black);
+    color: var(--color-4);
     margin: 4px 0;
     }
 
