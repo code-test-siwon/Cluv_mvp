@@ -1,11 +1,13 @@
 import React from "react";
+import styled from "styled-components";
 
 const Home = () => {
-  const modeChange = () => {};
+  const H1 = styled.div`
+    color: var(--color-3);
+  `;
   return (
     <>
-      <h1>home</h1>
-      <div>여기에 채팅 창</div>
+      <H1>home</H1>
     </>
   );
 };

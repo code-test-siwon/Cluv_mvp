@@ -22,11 +22,16 @@ const globalStyles2 = createGlobalStyle`
     --font-3 : 1.1rem;
     --font-4 : 0.8rem;
     --font-5 : 0.5rem;
+    --font-6 : 0.2rem;
+    --font-extrem: 5rem;
+    --font-ultra : 3rem;
+    --font-super : 2rem;
     --font-large: 48px;
     --font-medium: 28px;
     --font-regular: 18px;
     --font-small: 16px;
     --font-micro: 14px;
+    --font-nano : 8px;
 
     /* Font weight */
     --weight-bold: 700;

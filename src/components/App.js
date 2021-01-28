@@ -24,28 +24,32 @@ const App = () => {
   const modeChange = () => setMode((prev) => !prev);
   return (
     <>
+      <button onClick={modeChange}>ModeChange</button>
       {mode ? <DarkMode /> : <WhiteMode />}
       <WidthLine>
-        <button onClick={modeChange}>ModeChange</button>
         {init ? (
           <AppRouter isLoggedIn={isLoggedIn}></AppRouter>
         ) : (
           "initializing..."
         )}
+        <Div>&copy; Cluv {new Date().getFullYear()}</Div>
+        <Div>Beta</Div>
       </WidthLine>
     </>
   );
 };
-
 const WidthLine = styled.div`
   max-width: 370px;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
   border: 1px solid var(--color-1);
   background: var(--color-bg);
+`;
+const Div = styled.div`
+  color: var(--color-4);
 `;
 
 export default App;
