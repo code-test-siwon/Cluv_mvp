@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { authService, firebaseInstance } from "fbase";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 import logo from "images/Cluvlogo.png";
 import flogo from "images/facebookLogo.svg";
@@ -52,8 +54,18 @@ const Auth = () => {
     const data = await authService.signInWithPopup(provider);
     console.log(data);
   };
+  const onSubmit1 = (event) => {
+    event.preventDefault();
+    axios.post("www.dailyz.me/api/v1/user/email_verifier/", email);
+  };
   return (
     <>
+      <form onSubmit={onSubmit1} action="">
+        <input onChange={onChange} name="email" type="email" />
+        <input type="submit" value="인증번호 발송" />
+      </form>
+      {console.log("email", email)}
+
       <div>
         <img src={logo} alt="???" />
       </div>
@@ -63,14 +75,14 @@ const Auth = () => {
           <ColorSpan>를 인정받고</ColorSpan>
         </h2>
         <h2>
-          <ColorSpan>팬들과</ColorSpan>{" "}
+          <ColorSpan>팬들과</ColorSpan>
           <GreetingSpan>자유롭게 소통</GreetingSpan>
           <ColorSpan>하는 곳</ColorSpan>
         </h2>
       </Greeting>
       <Form onSubmit={onSubmit}>
         <LogDiv1>
-          <LogDiv2>이메일</LogDiv2>
+          <LogDiv2>아이디</LogDiv2>
           <LogInput1
             onChange={onChange}
             name="email"
@@ -91,35 +103,21 @@ const Auth = () => {
         </LogDiv1>
         <LogInput2 type="submit" value={newAccount ? "회원가입" : "로그인"} />
       </Form>
-      {error ? alert(error) : null}
+      {/* {error ? alert(error) : null} */}
       <LogDiv3>
         <LogDiv4>로그인정보를 잊으셨나요?</LogDiv4>
         <LogDiv4>
-          <LogSpan>아이디 / 비밀번호</LogSpan> 찾기
+          <LogSpan>
+            아이디 / <Link to="/findpassword">비밀번호</Link>
+          </LogSpan>{" "}
+          찾기
         </LogDiv4>
       </LogDiv3>
       <SocialDiv1>
-        <SocialDiv2>
-          소셜 계정으로 간편하게 {newAccount ? "회원가입" : "로그인"}하세요!
-        </SocialDiv2>
-        <SocialDiv3>
-          <img
-            onClick={onSocialClick}
-            name="google"
-            src={glogo}
-            alt="googleLogo"
-          />
-          <img
-            onClick={onSocialClick}
-            name="facebook"
-            src={flogo}
-            alt="facebookLogo"
-          />
-        </SocialDiv3>
         <SocialDiv4>
           <div>아직 회원이 아니신가요?</div>
           <SocialDiv5 onClick={toggleAccount}>
-            {newAccount ? "로그인하기" : "회원가입 하기"}
+            <Link to="/Signup1">회원가입하기</Link>
           </SocialDiv5>
         </SocialDiv4>
       </SocialDiv1>
@@ -228,7 +226,7 @@ const LogDiv4 = styled.div`
 `;
 const LogSpan = styled.span`
   color: var(--color-3);
-  font-size: var(--font-3);
+  font-size: var(--font-4);
 `;
 const SocialDiv1 = styled.div`
   margin: var(--font-ultra) auto;
@@ -258,6 +256,9 @@ const SocialDiv5 = styled.div`
   color: var(--color-3);
   font-size: var(--font-small);
   font-weight: var(--weight-regular);
+  :hover {
+    cursor: pointer;
+  }
 `;
 
 export default Auth;

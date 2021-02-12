@@ -32,8 +32,8 @@ const App = () => {
         ) : (
           "initializing..."
         )}
-        <Div>&copy; Cluv {new Date().getFullYear()}</Div>
-        <Div>Beta</Div>
+        {/* <Div>&copy; Cluv {new Date().getFullYear()}</Div> */}
+        {/* <Div>Beta</Div> */}
       </WidthLine>
     </>
   );
